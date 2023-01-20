@@ -96,7 +96,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-#define MOTHERBOARD BOARD_BTT_SKR_V1_4
+#define MOTHERBOARD BOARD_BTT_SKR_MINI_E3_V3_0
 #endif
 
 /**
@@ -108,7 +108,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT 0
+#define SERIAL_PORT 2
 
 /**
  * Serial Port Baud Rate
@@ -176,9 +176,9 @@
  * 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130',
  * 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
  */
-#define X_DRIVER_TYPE TMC2208 // TMC2225
-#define Y_DRIVER_TYPE TMC2208 // TMC2225
-#define Z_DRIVER_TYPE TMC2208 // TMC2225
+#define X_DRIVER_TYPE TMC2209
+#define Y_DRIVER_TYPE TMC2209
+#define Z_DRIVER_TYPE TMC2209
 // #define X2_DRIVER_TYPE A4988
 // #define Y2_DRIVER_TYPE A4988
 // #define Z2_DRIVER_TYPE A4988
@@ -190,7 +190,7 @@
 // #define U_DRIVER_TYPE  A4988
 // #define V_DRIVER_TYPE  A4988
 // #define W_DRIVER_TYPE  A4988
-#define E0_DRIVER_TYPE TMC2208 // TMC2225
+#define E0_DRIVER_TYPE TMC2209
 // #define E1_DRIVER_TYPE A4988
 // #define E2_DRIVER_TYPE A4988
 // #define E3_DRIVER_TYPE A4988
@@ -457,7 +457,7 @@
 // #define MKS_PWC                 // Using the MKS PWC add-on
 // #define PS_OFF_CONFIRM          // Confirm dialog when power off
 // #define PS_OFF_SOUND            // Beep 1s when power off
-#define PSU_ACTIVE_STATE LOW // Set 'LOW' for ATX, 'HIGH' for X-Box
+#define PSU_ACTIVE_STATE HIGH // Set 'LOW' for ATX, 'HIGH' for X-Box
 
 // #define PSU_DEFAULT_OFF               // Keep power off until enabled
 // directly with M80 #define PSU_POWERUP_DELAY      250    // (ms) Delay for the
@@ -1352,7 +1352,7 @@
  * E2...]]
  */
 #define DEFAULT_MAX_FEEDRATE                                                   \
-  { 500, 500, 5, 25 }
+  { 200, 200, 5, 25 }
 
 // #define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to
 // DEFAULT_MAX_FEEDRATE * 2
@@ -1439,7 +1439,7 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-#define JUNCTION_DEVIATION_MM 0.08 // (mm) Distance from real junction edge
+#define JUNCTION_DEVIATION_MM 0.054 // (mm) Distance from real junction edge
 #define JD_HANDLE_SMALL_SEGMENTS // Use curvature estimation instead of just the
                                  // junction angle for small segments (< 1mm)
                                  // with large junction angles (> 135°).
@@ -1816,7 +1816,7 @@
 // #define Z_AFTER_PROBING           5 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT                                                      \
-  -5 // Farthest distance below the trigger-point to go before stopping
+  -2 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
@@ -2811,7 +2811,7 @@
  *
  * Use CRC checks and retries on the SD communication.
  */
-#define SD_CHECK_AND_RETRY
+// #define SD_CHECK_AND_RETRY
 
 /**
  * LCD Menu Items
@@ -3079,7 +3079,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+// #define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
 // K.3D Full Graphic Smart Controller

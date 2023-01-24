@@ -2268,7 +2268,7 @@
 //========================= Unified Bed Leveling ============================
 //===========================================================================
 
-#define MESH_EDIT_GFX_OVERLAY // Display a graphics overlay while editing the
+/* #define MESH_EDIT_GFX_OVERLAY // Display a graphics overlay while editing the */
                               // mesh
 
 #define MESH_INSET 40 // Set Mesh bounds as an inset region of the bed

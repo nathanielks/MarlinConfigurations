@@ -1048,7 +1048,7 @@
  * E2...]]
  */
 #define DEFAULT_AXIS_STEPS_PER_UNIT                                            \
-  { 80, 80, 400, 93 }
+  { 80, 80, 400, 95.38462 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1057,7 +1057,7 @@
  * E2...]]
  */
 #define DEFAULT_MAX_FEEDRATE                                                   \
-  { 200, 200, 5, 25 }
+  { 80, 80, 5, 25 }
 
 // #define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to
 // DEFAULT_MAX_FEEDRATE * 2
@@ -1092,10 +1092,10 @@
  *   M204 T    Travel Acceleration
  */
 #define DEFAULT_ACCELERATION                                                   \
-  500 // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION 500 // E acceleration for retracts
+  1000 // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION 1000 // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION                                            \
-  500 // X, Y, Z acceleration for travel (non printing) moves
+  1000 // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk limits (mm/s)
@@ -1710,8 +1710,8 @@
  */
 // #define AUTO_BED_LEVELING_3POINT
 // #define AUTO_BED_LEVELING_LINEAR
-// #define AUTO_BED_LEVELING_BILINEAR
-#define AUTO_BED_LEVELING_UBL
+#define AUTO_BED_LEVELING_BILINEAR
+// #define AUTO_BED_LEVELING_UBL
 // #define MESH_BED_LEVELING
 
 /**
@@ -1780,7 +1780,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
 // Set the number of grid points per dimension.
-#define GRID_MAX_POINTS_X 5
+#define GRID_MAX_POINTS_X 3
 #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
 // Probe along the Y axis, advancing X after each column
@@ -1796,7 +1796,7 @@
 // Experimental Subdivision of the grid by Catmull-Rom method.
 // Synthesizes intermediate points to produce a more detailed mesh.
 //
-// #define ABL_BILINEAR_SUBDIVISION
+#define ABL_BILINEAR_SUBDIVISION
 #if ENABLED(ABL_BILINEAR_SUBDIVISION)
 // Number of subdivisions between probe points
 #define BILINEAR_SUBDIVISIONS 3
@@ -1815,7 +1815,7 @@
 
 #define MESH_INSET 20 // Set Mesh bounds as an inset region of the bed
 #define GRID_MAX_POINTS_X                                                      \
-  10 // Don't use more than 15 points per axis, implementation limited.
+  3 // Don't use more than 15 points per axis, implementation limited.
 #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
 #define UBL_HILBERT_CURVE // Use Hilbert distribution for less travel when

@@ -1710,8 +1710,8 @@
  */
 // #define AUTO_BED_LEVELING_3POINT
 // #define AUTO_BED_LEVELING_LINEAR
-#define AUTO_BED_LEVELING_BILINEAR
-// #define AUTO_BED_LEVELING_UBL
+// #define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_UBL
 // #define MESH_BED_LEVELING
 
 /**
@@ -1725,9 +1725,9 @@
 /**
  * Auto-leveling needs preheating
  */
-// #define PREHEAT_BEFORE_LEVELING
+#define PREHEAT_BEFORE_LEVELING
 #if ENABLED(PREHEAT_BEFORE_LEVELING)
-#define LEVELING_NOZZLE_TEMP 120 // (°C) Only applies to E0 at this time
+#define LEVELING_NOZZLE_TEMP 30 // (°C) Only applies to E0 at this time
 #define LEVELING_BED_TEMP 60
 #endif
 
@@ -1815,7 +1815,7 @@
 
 #define MESH_INSET 20 // Set Mesh bounds as an inset region of the bed
 #define GRID_MAX_POINTS_X                                                      \
-  3 // Don't use more than 15 points per axis, implementation limited.
+  7 // Don't use more than 15 points per axis, implementation limited.
 #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
 #define UBL_HILBERT_CURVE // Use Hilbert distribution for less travel when
@@ -2056,7 +2056,7 @@
 // Preheat Constants - Up to 5 are supported without changes
 //
 #define PREHEAT_1_LABEL "PLA"
-#define PREHEAT_1_TEMP_HOTEND 185
+#define PREHEAT_1_TEMP_HOTEND 205
 #define PREHEAT_1_TEMP_BED 60
 #define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED 255 // Value from 0 to 255

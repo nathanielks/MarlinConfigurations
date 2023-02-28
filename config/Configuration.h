@@ -1815,7 +1815,7 @@
 
 #define MESH_INSET 20 // Set Mesh bounds as an inset region of the bed
 #define GRID_MAX_POINTS_X                                                      \
-  7 // Don't use more than 15 points per axis, implementation limited.
+  10 // Don't use more than 15 points per axis, implementation limited.
 #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
 #define UBL_HILBERT_CURVE // Use Hilbert distribution for less travel when
